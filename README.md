@@ -1,59 +1,121 @@
 # Lab: Password Input
 
-## Overview
-Now that you've learned how to work with events in React, it's time to build something and put those skills to use! Your goal for this lab is to add events in React to practice building event handling.
+## 📌 Project Overview
 
-You are working with a client to create a new password input within their website. They would like to keep track of when the user is typing as well as when the user hovers over and away from the submit button. This is to help with checking the cadence of their typing and the movement of their mouse for the purpose of adding anti-botting security for their user. Your task is to add these three events and functions related to the events so that the security engineer can easily come in and apply their anti-bot measures easily.
+This project demonstrates **event handling in React** by creating a password input field and a submit button that track user interactions. The goal is to log typing behavior and mouse movements to support future **anti-bot security measures**.
 
-## Task 1: Define the Problem
-- Create a password input that will track the changing of text and the mouse movements.
+The application tracks:
 
-## Task 2: Determine the Design
-### Determine Component Tree
+* When a user types into a password field
+* When the mouse enters the submit button
+* When the mouse leaves the submit button
+
+All interactions are logged to the browser console.
+
+---
+
+## 🧩 Component Structure
+
 ```
-└── App
-    ├── PasswordInput
-    └── SubmitButton
+App
+ ├── PasswordInput
+ └── SubmitButton
 ```
-### Isolate/Develop Design per Component
 
-## Task 3: Develop the Code
-### Create Components
-#### PasswordInput:
-- Create `PasswordInput` React component
-- Render an `<input>` with a password type
+### Components
 
-#### SubmitButton:
-- Create a `SubmitButton` React component
-- Render a `<button>` with the text “Submit Password”
+* **App.jsx**
 
-### Add Events to Elements
-#### PasswordInput:
-- Add a change event to the `<input>`
+  * Root component
+  * Renders `PasswordInput` and `SubmitButton`
 
-#### SubmitButton:
-- Add a mouse enter event to the `<button>`
-- Add a mouse leave event to the `<button>`
+* **PasswordInput.jsx**
 
-### Create Event Handler Functions
-#### PasswordInput:
-- Create a `handleChange` function
-- Add a `console.log` to print out “Entering password…”
+  * Renders a password input field
+  * Listens for typing using the `onChange` event
+  * Logs a message when the user types
 
-#### SubmitButton:
-- Create a `handleEnter` function
-- Add a `console.log` to print out “Mouse Entering”
-- Create a `handleLeave` function
-- Add a `console.log` to print out “Mouse Exiting”
+* **SubmitButton.jsx**
 
-### Call Function in Respective Event
+  * Renders a submit button
+  * Detects mouse enter and mouse leave events
+  * Logs messages for both interactions
 
-## Task 4: Test and Refine
-- Debugging and testing during coding
+---
 
-## Task 5: Document and Maintain
+## ⚙️ Technologies Used
 
-## Tools and Resources
-- **GitHub Repository:** [React Event Handling Vite Lab](https://github.com/learn-co-curriculum/react-event-handling-vite-lab)
-- **Event Handling in React:** [React Documentation](https://react.dev/learn/responding-to-events#adding-event-handlers)
+* React
+* JavaScript (ES6)
+* Vite (development server)
+* Jest & React Testing Library (for testing)
+
+---
+
+## ▶️ How to Run the Project
+
+1. Clone the repository:
+
+   git clone <your-repo-url>
+   ```
+
+2. Navigate into the project folder:
+
+   cd password-input-lab
+   ```
+
+3. Install dependencies:
+
+   npm install
+   ```
+
+4. Start the development server:
+
+   npm run dev
+   ```
+
+5. Open your browser and visit:
+
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## 🧪 Testing
+
+This project supports testing with **Jest** and **React Testing Library**.
+
+### What is tested:
+
+* Input renders correctly
+* Input type is `password`
+* Typing triggers console output
+* Button renders with correct text
+* Mouse enter and leave events trigger console logs
+
+Example events tested:
+
+* `onChange`
+* `onMouseEnter`
+* `onMouseLeave`
+
+---
+
+## 📝 Notes
+
+* Console logging is intentionally used to allow future security engineers to integrate advanced anti-bot logic.
+* The project follows React best practices for event handling and component separation.
+
+---
+
+## ✅ Learning Outcomes Achieved
+
+* Implemented React event handlers
+* Used controlled user interactions
+* Structured a simple React component tree
+* Prepared codebase for testing and maintainability
+
+---
+
 
